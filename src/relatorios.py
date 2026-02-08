@@ -1,50 +1,41 @@
+# relatorios.py
+
 def gerar_relatorio_tarefas(tarefas):
-    # Imprime um relatório simples separando tarefas pendentes e concluídas.
-    print("\n" + "="*30)
-    # Título do relatório de tarefas
+    print("\n" + "=" * 30)
     print("   RELATÓRIO DE TAREFAS")
-    print("="*30)
-    # Lista compreensiva para filtrar tarefas não concluídas
-    pendentes = [tarefa for tarefa in tarefas if not tarefa.concluida]
-    # Lista compreensiva para filtrar tarefas concluídas
-    concluidas = [tarefa for tarefa in tarefas if tarefa.concluida]
+    print("=" * 30)
 
-    # Imprime resumo de pendentes
+    if not tarefas:
+        print("Nenhuma tarefa cadastrada.")
+        return
+
+    pendentes = [t for t in tarefas if not t.concluida]
+    concluidas = [t for t in tarefas if t.concluida]
+
     print(f"PENDENTES ({len(pendentes)}):")
-    for tarefa in pendentes:
-        # Somente o título é mostrado no relatório compacto
-        print(f"  • {tarefa.titulo}")
+    for t in pendentes:
+        print(f"  • {t.titulo}")
 
-    # Imprime resumo de concluídas
     print(f"\nCONCLUÍDAS ({len(concluidas)}):")
-    for tarefa in concluidas:
-        print(f"  • {tarefa.titulo}")
+    for t in concluidas:
+        print(f"  • {t.titulo}")
+
 
 def gerar_relatorio_habitos(habitos):
-    # Relatório que mostra cada hábito e seu desempenho, incluindo tarefas de apoio.
-    """
-    Este relatório percorre cada hábito e exibe suas informações e tarefas vinculadas.
-    """
-    print("\n" + "="*30)
-    # Título do relatório de hábitos
+    print("\n" + "=" * 30)
     print("   DESEMPENHO DE HÁBITOS")
-    print("="*30)
+    print("=" * 30)
 
-    # Se não houver hábitos cadastrados, avisa e retorna
     if not habitos:
         print("Nenhum hábito cadastrado.")
         return
 
     for habito in habitos:
-        # Usa o método __str__ da classe Habito para imprimir detalhes
         print(habito)
 
-        # Se o hábito tiver tarefas vinculadas, calcula o percentual concluído
         if habito.tarefas_vinculadas:
-            concluidas = len([tarefa for tarefa in habito.tarefas_vinculadas if tarefa.concluida])
+            concluidas = len([t for t in habito.tarefas_vinculadas if t.concluida])
             total = len(habito.tarefas_vinculadas)
             progresso = (concluidas / total) * 100
-            # Mostra o progresso com uma casa decimal
             print(f"  >> Progresso das tarefas de apoio: {progresso:.1f}%")
-            # Linha separadora após cada hábito
             print("-" * 20)
