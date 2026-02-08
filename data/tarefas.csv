@@ -1,3 +1,3 @@
-id,titulo,descricao,data_limite,concluida
-1,Estudar,Estudar agora,08/02/2026,True
-2,Projeto 1 LIPAI ,Entrega do codigo projeto 1 LIPAI,08/02/202,False
+id,titulo,descricao,data_limite,concluida,id_habito
+2,Estudar HTML,Html,11/03/2026,True,
+3,Limpar a casa,Limpeza geral da casa ,09/02/2026,False,
