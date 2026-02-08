@@ -19,20 +19,20 @@ class RepositorioTarefas:
         with open(self.arquivo_csv, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow(['id', 'titulo', 'descricao', 'data_limite', 'concluida'])
-            for t in tarefas:
-                writer.writerow([t.id, t.titulo, t.descricao, t.data_limite, t.concluida])
+            for tarefa in tarefas:
+                writer.writerow([tarefa.id, tarefa.titulo, tarefa.descricao, tarefa.data_limite, tarefa.concluida])
 
     def carregar(self):
         tarefas = []
         with open(self.arquivo_csv, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                t = Tarefa(
+                tarefa = Tarefa(
                     row['id'], 
                     row['titulo'], 
                     row['descricao'], 
                     row['data_limite'], 
                     row['concluida'] == 'True'
                 )
-                tarefas.append(t)
+                tarefas.append(tarefa)
         return tarefas

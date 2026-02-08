@@ -19,19 +19,19 @@ class RepositorioHabitos:
         with open(self.arquivo_csv, 'w', newline='', encoding='utf-8') as f:
             writer = csv.writer(f)
             writer.writerow(['id', 'nome', 'frequencia', 'contador_execucoes'])
-            for h in habitos:
-                writer.writerow([h.id, h.nome, h.frequencia, h.contador_execucoes])
+            for habito in habitos:
+                writer.writerow([habito.id, habito.nome, habito.frequencia, habito.contador_execucoes])
 
     def carregar(self):
         habitos = []
         with open(self.arquivo_csv, 'r', encoding='utf-8') as f:
             reader = csv.DictReader(f)
             for row in reader:
-                h = Habito(
+                habito = Habito(
                     row['id'], 
                     row['nome'], 
                     row['frequencia'], 
                     int(row['contador_execucoes'])
                 )
-                habitos.append(h)
+                habitos.append(habito)
         return habitos

@@ -1,16 +1,16 @@
 def gerar_relatorio_tarefas(tarefas):
     """Exibe tarefas pendentes e concluídas."""
     print("\n--- RELATÓRIO DE TAREFAS ---")
-    pendentes = [t for t in tarefas if not t.concluida]
-    concluidas = [t for t in tarefas if t.concluida]
+    pendentes = [tarefa for tarefa in tarefas if not tarefa.concluida]
+    concluidas = [tarefa for tarefa in tarefas if tarefa.concluida]
     
     print(f"Pendentes ({len(pendentes)}):")
-    for t in pendentes:
-        print(f"  - {t.titulo} (ID: {t.id})")
+    for tarefa in pendentes:
+        print(f"  - {tarefa.titulo} (ID: {tarefa.id})")
         
     print(f"\nConcluídas ({len(concluidas)}):")
-    for t in concluidas:
-        print(f"  - {t.titulo} (ID: {t.id})")
+    for tarefa in concluidas:
+        print(f"  - {tarefa.titulo} (ID: {tarefa.id})")
 
 def gerar_relatorio_habitos(habitos):
     """Exibe o desempenho de cada hábito."""
@@ -19,5 +19,5 @@ def gerar_relatorio_habitos(habitos):
         print("Nenhum hábito cadastrado.")
         return
         
-    for h in habitos:
-        print(f"Hábito: {h.nome} | Frequência: {h.frequencia} | Total de Execuções: {h.contador_execucoes}")
+    for habito in habitos:
+        print(f"Hábito: {habito.nome} | Frequência: {habito.frequencia} | Total de Execuções: {habito.contador_execucoes}")

@@ -26,25 +26,25 @@ def main():
         opcao = exibir_menu()
 
         if opcao == "1":
-            id_t = str(len(tarefas) + 1)
+            id_tarefa = str(len(tarefas) + 1)
             titulo = input("Título da tarefa: ")
-            desc = input("Descrição: ")
+            descricao = input("Descrição: ")
             data = input("Data limite (DD/MM/AAAA): ")
-            tarefas.append(Tarefa(id_t, titulo, desc, data))
+            tarefas.append(Tarefa(id_tarefa, titulo, descricao, data))
             repo_tarefas.salvar(tarefas)
             print("Tarefa cadastrada!")
 
         elif opcao == "2":
             print("\n--- LISTA DE TAREFAS ---")
-            for t in tarefas:
-                print(t)
+            for tarefa in tarefas:
+                print(tarefa)
 
         elif opcao == "3":
             id_busca = input("ID da tarefa a concluir: ")
             encontrada = False
-            for t in tarefas:
-                if t.id == id_busca:
-                    t.marcar_concluida()
+            for tarefa in tarefas:
+                if tarefa.id == id_busca:
+                    tarefa.marcar_concluida()
                     repo_tarefas.salvar(tarefas)
                     print("Tarefa concluída!")
                     encontrada = True
@@ -61,15 +61,15 @@ def main():
 
         elif opcao == "5":
             print("\n--- LISTA DE HÁBITOS ---")
-            for h in habitos:
-                print(h)
+            for habito in habitos:
+                print(habito)
 
         elif opcao == "6":
             id_busca = input("ID do hábito executado: ")
             encontrada = False
-            for h in habitos:
-                if h.id == id_busca:
-                    h.registrar_execucao()
+            for habito in habitos:
+                if habito.id == id_busca:
+                    habito.registrar_execucao()
                     repo_habitos.salvar(habitos)
                     print("Execução registrada!")
                     encontrada = True
@@ -81,7 +81,7 @@ def main():
             relatorios.gerar_relatorio_habitos(habitos)
 
         elif opcao == "0":
-            print("Saindo... Até logo!")
+            print("Gerenciador encerrado!")
             break
         else:
             print("Opção inválida.")
