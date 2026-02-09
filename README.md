@@ -86,7 +86,7 @@ gerenciador_tarefas/
 
 ## Considerações Finais
 
-Este projeto foi desenvolvido com o objetivo de aplicar, na prática, os conceitos estudados em sala de aula, como:
+Este projeto foi desenvolvido com o objetivo de aplicar, na prática, os conceitos estudados no projeto LIPAI, como:
 
 - Programação Orientada a Objetos
 - Uso de classes e objetos
