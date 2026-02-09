@@ -1,5 +1,8 @@
 id,titulo,descricao,data_limite,concluida,id_habito
 2,Estudar HTML,Html,11/03/2026,True,
-3,Limpar a casa,Limpeza geral da casa ,09/02/2026,True,
-4,Ler,Leitura do Livro Dom Casmurro,12/03/2026,False,
+4,Ler,Leitura do Livro Dom Quixote,22/03/2026,False,
 5,Comprar tenis de corrida,,,False,4
+6,Estudar,Estudo python,20/02/2026,True,
+7,Estudar HTML,Estudo HTML para prova,,True,5
+8,Estudar CSS ,Estudo Css para prova,11/04/2026,False,5
+9,Estudar JS,Estudo Js para prova,11/04/2026,False,5
