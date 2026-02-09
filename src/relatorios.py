@@ -9,16 +9,16 @@ def gerar_relatorio_tarefas(tarefas):
         print("Nenhuma tarefa cadastrada.")
         return
 
-    pendentes = [t for t in tarefas if not t.concluida]
-    concluidas = [t for t in tarefas if t.concluida]
+    pendentes = [tarefa for tarefa in tarefas if not tarefa.concluida]
+    concluidas = [tarefa for tarefa in tarefas if tarefa.concluida]
 
     print(f"PENDENTES ({len(pendentes)}):")
-    for t in pendentes:
-        print(f"  • {t.titulo}")
+    for tarefa in pendentes:
+        print(f"  • {tarefa.titulo}")
 
     print(f"\nCONCLUÍDAS ({len(concluidas)}):")
-    for t in concluidas:
-        print(f"  • {t.titulo}")
+    for tarefa in concluidas:
+        print(f"  • {tarefa.titulo}")
 
 
 def gerar_relatorio_habitos(habitos):
@@ -34,7 +34,7 @@ def gerar_relatorio_habitos(habitos):
         print(habito)
 
         if habito.tarefas_vinculadas:
-            concluidas = len([t for t in habito.tarefas_vinculadas if t.concluida])
+            concluidas = len([tarefa for tarefa in habito.tarefas_vinculadas if tarefa.concluida])
             total = len(habito.tarefas_vinculadas)
             progresso = (concluidas / total) * 100
             print(f"  >> Progresso das tarefas de apoio: {progresso:.1f}%")
