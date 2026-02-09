@@ -1,7 +1,6 @@
 # Projeto D – Gerenciador de Tarefas e Hábitos
 
 Aluno: Diogo Arantes Borges Andrade  
-Disciplina: Linguagem de Programação / Programação em Python  
 Projeto: Projeto 1 – Semana 4 e 5  
 
 ---
@@ -67,6 +66,7 @@ Os dados são salvos automaticamente na pasta `data/`, nos arquivos `tarefas.csv
 
 ## Estrutura de Diretórios do Projeto
 
+```
 gerenciador_tarefas/
 │
 ├── src/
@@ -81,8 +81,8 @@ gerenciador_tarefas/
 │   └── habitos.csv              # Arquivo de dados dos hábitos
 │
 └── README.md
+```
 
----
 
 ## Considerações Finais
 
